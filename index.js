@@ -28,6 +28,7 @@ mongoose.connect(db_link,{
     useUnifiedTopology: true
 });
 const db = mongoose.connection;
+mongoose.set('strictQuery', true);
 
 db.on('error', (error) => console.log(error));
 db.once('open', () => console.log('Database Connected...'));
